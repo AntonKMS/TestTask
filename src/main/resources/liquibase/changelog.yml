@@ -1,0 +1,58 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: kms
+      changes:
+        - createTable:
+            tableName: garage
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: car
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: id_pk
+                    nullable: false
+              - column:
+                  name: driver_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brand
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: garage_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: kms
+      changes:
+      - addForeignKeyConstraint:
+          baseTableName: car
+          baseColumnNames: garage_id
+          referencedTableName: garage
+          referencedColumnNames: id
+          constraintName: car_garage_fk
