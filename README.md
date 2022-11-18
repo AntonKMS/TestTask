@@ -2,14 +2,14 @@
 
 # “ехнологии
 
-Х	Java версии >= 8 
-Х	Spring Boot (standalone приложение)
-Х	—”Ѕƒ PostgreSQL (верси€ не важна)
-Х	Liquibase дл€ версионировани€ схемы Ѕƒ
-Х	—борка проекта через Maven
-Х	 онфигураци€ приложени€ через application.yml
+##Х	Java версии >= 8 
+##Х	Spring Boot (standalone приложение)
+##Х	—”Ѕƒ PostgreSQL (верси€ не важна)
+##Х	Liquibase дл€ версионировани€ схемы Ѕƒ
+##Х	—борка проекта через Maven
+##Х	 онфигураци€ приложени€ через application.yml
 
-# “ребовани€
+# “ребовани€:
 
 1.	—оздать 2 таблицы в Ѕƒ через Liquibase:
 	a.	Car {id: Long PK,  driver_name: String,  brand: String,  garage_id: Long FK}
